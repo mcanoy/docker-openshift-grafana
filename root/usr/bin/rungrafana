@@ -33,6 +33,10 @@ export NSS_WRAPPER_GROUP=/etc/group
 #   done
 # fi
 
+#test -d /etc/grafana/provisioning || mkdir /etc/grafana/provisioning
+#test -d /etc/grafana/provisioning/datasources || mkdir /etc/grafana/provisioning/datasources 
+cp /datasources/* /usr/share/grafana/conf/provisioning/datasources/
+
 exec /usr/sbin/grafana-server                   \
   --homepath=/usr/share/grafana                 \
   --config=/etc/grafana/grafana.ini             \
